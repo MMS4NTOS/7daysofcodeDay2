@@ -1,1 +1,114 @@
 
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - #7DaysOfCode - Lógica JS 2/7: Variáveis</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <div>
+
+    <head>
+      <h1> Seja bem vindo! Para provar que cumpri o desafio, por favor, preencha o campo abaixo com suas informações. </h1>
+      <label> Nome ou Pseudônimo </label> <br>
+      <input type="text" id="nome" placeholder="Escreva aqui"> <br> <br>
+      <label> Sua idade fictícia </label> <br>
+      <input type="number" id="idade" placeholder="Escreva aqui"> <br> <br>
+      <label> Uma mensagem motivacional (ou não) para si mesmo </label> <br>
+      <input type="text" id="mensagem" placeholder="Escreva aqui"> <br> <br>
+      <button type="submit" onclick="testar()"> Testar o teste </button> <br> <br>
+    </head>
+    <main id="resultado"> </main>
+    <p id='feedbackFinal'></p>
+    <sub> <img src="https://i.imgur.com/BMPXs60.png" /> </sub>
+  </div>
+</body>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
+
+function testar() {
+  let nome = document.getElementById("nome").value;
+  let idade = document.getElementById("idade").value;
+  let mensagem = document.getElementById("mensagem").value;
+
+  if (nome == "" || idade == "" || mensagem == "") {
+    alert("Parece que você esqueceu de preencher algum dos campos, não é?");
+  } else {
+    let resultado =
+      "Obrigado pela consultoria. Seu nome é " +
+      nome +
+      ". Mas você talvez não tenha contado a verdade aqui. Se for o caso, fica tranquilo, nunca vou descobrir isso mesmo. <br> Você tem " +
+      idade +
+      " anos. <br> Minha mensagem motivacional para você é: " +
+      mensagem +
+      ". Espero que seja de ajuda. <br> Se você viu todo esse texto, é um sinal de que cumprimos o desafio (ou não). Agora, vamos ao desafio seguinte: Você gostou de como cumpri o desafio? Responda 'sim' para 'sim' e 'não' para 'não' <br><br> <input type='text' id='feedback' placeholder='Sua resposta aqui'> <br><br> <button type='submit' onClick='retorno()'> Enviar feedback </button> <br><br>";
+
+    let recadoFinal = document.getElementById("resultado");
+    recadoFinal.innerHTML = resultado;
+  }
+}
+
+function retorno() {
+  let feedback = document.getElementById("feedback").value;
+  let verFeedback = document.getElementById("feedbackFinal");
+  if (feedback == "sim") {
+    verFeedback.innerHTML =
+      "Fico feliz com isso! Agradeço a colaboração. Muito obrigado, e até a próxima!";
+  } else if (feedback == "não") {
+    verFeedback.innerHTML =
+      "É, não dá pra agradar todo mundo. O que posso melhorar? De qualquer forma, agradeço a colaboração. Muito obrigado, e até a próxima! ";
+  } else {
+    alert("Tem certeza que você respondeu exatamente 'sim' ou 'não'?");
+  }
+}
+
+// Agradeço a colaboração. Muito obrigado, e até a próxima!";
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&display=swap");
+
+body {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(236.85deg, gray 27.26%, darkgray 96.03%);
+  color: darkblue;
+  font-family: "Source Code Pro", monospace;
+  padding: 50px;
+}
+
+div {
+  align-self: center;
+  text-align: center;
+  border: 4px solid black;
+  color: white;
+  padding: 45px;
+  background: linear-gradient(236.85deg, black 27.26%, blue 96.03%);
+
+  border-radius: 20px;
+  box-shadow: 6px 6px 6px #0e1d2f;
+}
+
+main {
+  font-size: 14px;
+}
+
+button {
+  background: #ecf4ff;
+  border: 2px solid #0e1d2f;
+  box-sizing: border-box;
+  border-radius: 100px;
+}
+
+input {
+  border-radius: 10px;
+  text-align: center;
+}
+
+img {
+  margin-left: 650px;
+}
